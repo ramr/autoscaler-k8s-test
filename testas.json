@@ -28,7 +28,7 @@
         "scaleBy": 2
       }
     ],
-    "maxAutoScaleCount": 7,
+    "maxAutoScaleCount": 6,
     "minAutoScaleCount": 1,
     "targetSelector": {
        "name": "hello-rc"
