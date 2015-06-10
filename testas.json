@@ -1,0 +1,39 @@
+{
+  "kind": "AutoScaler",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "hello-as",
+    "creationTimestamp": null,
+    "labels": {
+      "name": "hello-as"
+    }
+  },
+  "spec": {
+    "thresholds": [
+      {
+        "type": "Intention",
+        "intentions": [
+          {
+             "intent": "LoadAverage",
+             "value": 0.1,
+             "duration": 120
+          },
+          {
+             "intent": "MemoryUsage",
+             "value": 65536,
+             "duration": 300
+          }
+        ],
+        "actionType": "ScaleUp",
+        "scaleBy": 2
+      }
+    ],
+    "maxAutoScaleCount": 7,
+    "minAutoScaleCount": 1,
+    "targetSelector": {
+       "name": "hello-rc"
+    },
+    "advisors": ["truthiness"]
+  },
+  "status": {}
+}

@@ -1,0 +1,39 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"hello-rc",
+      "labels":{
+         "name":"hello-rc"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "name":"hello-rc"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "name":"hello-rc"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"ncwebservice",
+                  "image":"ncwebservice",
+                  "ports":[
+                     {
+                        "containerPort":8080,
+                        "protocol":"TCP"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
+
+
