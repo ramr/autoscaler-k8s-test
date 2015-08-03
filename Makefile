@@ -1,6 +1,6 @@
 #!/bin/env make
 
-K8S_SOURCE_DIR = $(HOME)/work/kubernetes
+K8S_SOURCE_DIR = $(HOME)/workarea/kubernetes
 all:	build
 
 build:	
